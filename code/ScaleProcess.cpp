@@ -68,7 +68,7 @@ bool ScaleProcess::IsActive( unsigned int pFlags ) const {
 }
 
 void ScaleProcess::SetupProperties( const Importer* pImp ) {
-    mScale = pImp->GetPropertyFloat( AI_CONFIG_GLOBAL_SCALE_FACTOR_KEY, 0 );
+    mScale = pImp->GetPropertyFloat("GLOBAL_SCALE_FACTOR", 0 );
 }
 
 void ScaleProcess::Execute( aiScene* pScene ) {

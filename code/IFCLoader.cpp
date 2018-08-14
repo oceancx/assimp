@@ -159,8 +159,8 @@ void IFCImporter::SetupProperties(const Importer* pImp)
 {
     settings.skipSpaceRepresentations = pImp->GetPropertyBool(AI_CONFIG_IMPORT_IFC_SKIP_SPACE_REPRESENTATIONS,true);
     settings.useCustomTriangulation = pImp->GetPropertyBool(AI_CONFIG_IMPORT_IFC_CUSTOM_TRIANGULATION,true);
-    settings.conicSamplingAngle = std::min(std::max((float) pImp->GetPropertyFloat(AI_CONFIG_IMPORT_IFC_SMOOTHING_ANGLE, AI_IMPORT_IFC_DEFAULT_SMOOTHING_ANGLE), 5.0f), 120.0f);
-	settings.cylindricalTessellation = std::min(std::max(pImp->GetPropertyInteger(AI_CONFIG_IMPORT_IFC_CYLINDRICAL_TESSELLATION, AI_IMPORT_IFC_DEFAULT_CYLINDRICAL_TESSELLATION), 3), 180);
+    settings.conicSamplingAngle = std::min(std::max((float) pImp->GetPropertyFloat("IMPORT_IFC_SMOOTHING_ANGLE", 10.0f), 5.0f), 120.0f);
+    settings.cylindricalTessellation = std::min(std::max(pImp->GetPropertyInteger("IMPORT_IFC_CYLINDRICAL_TESSELLATION", 32), 3), 180);
 	settings.skipAnnotations = true;
 }
 
